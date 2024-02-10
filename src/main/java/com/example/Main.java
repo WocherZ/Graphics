@@ -51,6 +51,7 @@ public class Main extends Application {
         // Лабораторная работа 1. Вычерчивание отрезков прямых. Заполнение полигонов.
 
         // 1. Вычерчивание отрезка прямой линии
+<<<<<<< HEAD
         drawingUtils.drawLine(300, 300, 500, 500, RGBPIXEL.BLUE);
 
         // 2. Вывод на экран полигона
@@ -68,15 +69,42 @@ public class Main extends Application {
         // 3.2 Проверка выпуклиый или невыпуклый полигон
 //        boolean isConvex = DrawingUtils.isConvexPolygon(polygonPoints);
 //        System.out.println("Является ли многоугольник выпуклым? " + isConvex);
+=======
+//        drawingUtils.drawLine(100, 100, 500, 500, RGBPIXEL.BLUE);
+
+        // 2. Вывод на экран полигона
+        List<Point> polygonPoints = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < 4; i++) {
+            polygonPoints.add(new Point(random.nextInt(400) + 100, random.nextInt(400) + 100));
+        }
+        drawingUtils.drawPoligon(polygonPoints, RGBPIXEL.GREEN);
+
+        // 3.1 Проверка простой или сложный полигон
+        boolean isSimple = DrawingUtils.isSimplePolygon(polygonPoints);
+        System.out.println("Является ли многоугольник простым? " + isSimple);
+
+        // 3.2 Проверка выпуклый или невыпуклый полигон
+        boolean isConvex = DrawingUtils.isConvexPolygon(polygonPoints);
+        System.out.println("Является ли многоугольник выпуклым? " + isConvex);
+>>>>>>> cb942aa (add tests for first lab)
 
         // 4.1 Заполнение полигона
 //        drawingUtils.colorPolygon(polygonPoints, RGBPIXEL.RED, true);
 
+<<<<<<< HEAD
         // 4.2 Определение прнадлежности пикселя полигону
 //        Point testPoint = new Point(300, 300);
 //        drawingUtils.setPixel(testPoint, new RGBPIXEL(0, 0, 0));
 //        boolean isInside = DrawingUtils.isPointInPolygon(polygonPoints, testPoint, true);
 //        System.out.println("Принадлежит ли пиксел полигону? " + isInside);
+=======
+        // 4.2 Определение принадлежности пикселя полигону
+        Point testPoint = new Point(300, 300);
+        drawingUtils.setPixel(testPoint, new RGBPIXEL(0, 0, 0));
+        boolean isInside = DrawingUtils.isPointInPolygon(polygonPoints, testPoint, true);
+        System.out.println("Принадлежит ли пиксел полигону? " + isInside);
+>>>>>>> cb942aa (add tests for first lab)
 
         // Лабораторная работа 2. Построение кривых. Алгоритмы отсечения
 
