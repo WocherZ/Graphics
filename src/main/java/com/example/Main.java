@@ -51,13 +51,12 @@ public class Main extends Application {
         // Лабораторная работа 1. Вычерчивание отрезков прямых. Заполнение полигонов.
 
         // 1. Вычерчивание отрезка прямой линии
-<<<<<<< HEAD
-        drawingUtils.drawLine(300, 300, 500, 500, RGBPIXEL.BLUE);
+//        drawingUtils.drawLine(300, 300, 500, 500, RGBPIXEL.BLUE);
 
         // 2. Вывод на экран полигона
 //        List<Point> polygonPoints = new ArrayList<>();
 //        Random random = new Random();
-//        for (int i = 0; i < 5; i++) {
+//        for (int i = 0; i < 4; i++) {
 //            polygonPoints.add(new Point(random.nextInt(400) + 100, random.nextInt(400) + 100));
 //        }
 //        drawingUtils.drawPoligon(polygonPoints, RGBPIXEL.GREEN);
@@ -66,45 +65,18 @@ public class Main extends Application {
 //        boolean isSimple = DrawingUtils.isSimplePolygon(polygonPoints);
 //        System.out.println("Является ли многоугольник простым? " + isSimple);
 
-        // 3.2 Проверка выпуклиый или невыпуклый полигон
+        // 3.2 Проверка выпуклый или невыпуклый полигон
 //        boolean isConvex = DrawingUtils.isConvexPolygon(polygonPoints);
 //        System.out.println("Является ли многоугольник выпуклым? " + isConvex);
-=======
-//        drawingUtils.drawLine(100, 100, 500, 500, RGBPIXEL.BLUE);
-
-        // 2. Вывод на экран полигона
-        List<Point> polygonPoints = new ArrayList<>();
-        Random random = new Random();
-        for (int i = 0; i < 4; i++) {
-            polygonPoints.add(new Point(random.nextInt(400) + 100, random.nextInt(400) + 100));
-        }
-        drawingUtils.drawPoligon(polygonPoints, RGBPIXEL.GREEN);
-
-        // 3.1 Проверка простой или сложный полигон
-        boolean isSimple = DrawingUtils.isSimplePolygon(polygonPoints);
-        System.out.println("Является ли многоугольник простым? " + isSimple);
-
-        // 3.2 Проверка выпуклый или невыпуклый полигон
-        boolean isConvex = DrawingUtils.isConvexPolygon(polygonPoints);
-        System.out.println("Является ли многоугольник выпуклым? " + isConvex);
->>>>>>> cb942aa (add tests for first lab)
 
         // 4.1 Заполнение полигона
 //        drawingUtils.colorPolygon(polygonPoints, RGBPIXEL.RED, true);
 
-<<<<<<< HEAD
-        // 4.2 Определение прнадлежности пикселя полигону
+        // 4.2 Определение принадлежности пикселя полигону
 //        Point testPoint = new Point(300, 300);
 //        drawingUtils.setPixel(testPoint, new RGBPIXEL(0, 0, 0));
 //        boolean isInside = DrawingUtils.isPointInPolygon(polygonPoints, testPoint, true);
 //        System.out.println("Принадлежит ли пиксел полигону? " + isInside);
-=======
-        // 4.2 Определение принадлежности пикселя полигону
-        Point testPoint = new Point(300, 300);
-        drawingUtils.setPixel(testPoint, new RGBPIXEL(0, 0, 0));
-        boolean isInside = DrawingUtils.isPointInPolygon(polygonPoints, testPoint, true);
-        System.out.println("Принадлежит ли пиксел полигону? " + isInside);
->>>>>>> cb942aa (add tests for first lab)
 
         // Лабораторная работа 2. Построение кривых. Алгоритмы отсечения
 
@@ -162,7 +134,7 @@ public class Main extends Application {
         // Лабораторная работа 3. Преобразования и способы проецирования трехмерных объектов.
 
         // 1. Построения параллельной проекции повернутого параллелепипеда на плоскость Z=0.
-//        Parallelepiped parallelepiped = drawingUtils3D.createParallelepiped(new Point3D(250, 250, 250), 200, 200, 200);
+        Parallelepiped parallelepiped = drawingUtils3D.createParallelepiped(new Point3D(250, 250, 250), 200, 200, 200);
 //        drawingUtils3D.rotate(parallelepiped, Math.PI / 8, parallelepiped.getCenter());
 //        drawingUtils3D.drawAllBounds(parallelepiped, RGBPIXEL.GREEN);
 
@@ -170,28 +142,28 @@ public class Main extends Application {
 //        drawingUtils3D.drawOnePointProjection(parallelepiped, 0.01, RGBPIXEL.RED);
 
         // 3. Удаления невидимых ребер "проволочной" модели параллелепипеда.
-//        drawingUtils3D.drawWithoutVisibleEdges(parallelepiped, RGBPIXEL.BLACK);
+//         drawingUtils3D.drawWithoutVisibleEdges(parallelepiped, RGBPIXEL.BLACK);
 
         // 4. Анимация вращения параллелепипеда
-//        String fileForSave = "anim.gif"; // Файл, в который сохранится анимация
-//
-//        gifEncoder = new AnimatedGifEncoder();
-//        gifEncoder.start(Files.newOutputStream(Paths.get(fileForSave)));
-//        gifEncoder.setRepeat(0);
-//
-//        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(100), event -> {
-//            drawingUtils.getGc().setFill(javafx.scene.paint.Color.WHITE);
-//            drawingUtils.getGc().fillRect(0, 0, drawingUtils.getCanvas().getWidth(), drawingUtils.getCanvas().getHeight());
-//
-//            drawingUtils3D.rotate(parallelepiped, Math.PI / 100, parallelepiped.getCenter());
-//            drawingUtils3D.drawAllBounds(parallelepiped, RGBPIXEL.BLUE);
-//
-//            WritableImage snapshot = drawingUtils.getCanvas().snapshot(null, null);
-//            BufferedImage image = SwingFXUtils.fromFXImage(snapshot, null);
-//            gifEncoder.addFrame(image);
-//        }));
-//        timeline.setCycleCount(40);
-//        timeline.play();
+        String fileForSave = "anim.gif"; // Файл, в который сохранится анимация
+
+        gifEncoder = new AnimatedGifEncoder();
+        gifEncoder.start(Files.newOutputStream(Paths.get(fileForSave)));
+        gifEncoder.setRepeat(0);
+
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(100), event -> {
+            drawingUtils.getGc().setFill(javafx.scene.paint.Color.WHITE);
+            drawingUtils.getGc().fillRect(0, 0, drawingUtils.getCanvas().getWidth(), drawingUtils.getCanvas().getHeight());
+
+            drawingUtils3D.rotate(parallelepiped, Math.PI / 100, parallelepiped.getCenter());
+            drawingUtils3D.drawAllBounds(parallelepiped, RGBPIXEL.BLUE);
+
+            WritableImage snapshot = drawingUtils.getCanvas().snapshot(null, null);
+            BufferedImage image = SwingFXUtils.fromFXImage(snapshot, null);
+            gifEncoder.addFrame(image);
+        }));
+        timeline.setCycleCount(40);
+        timeline.play();
 
 
         // Домашнее задание
